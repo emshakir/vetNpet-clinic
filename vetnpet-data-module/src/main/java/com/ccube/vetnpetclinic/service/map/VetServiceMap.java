@@ -1,11 +1,11 @@
 package com.ccube.vetnpetclinic.service.map;
 
-import com.ccube.vetnpetclinic.model.Vet;
-import com.ccube.vetnpetclinic.service.CrudService;
+import com.ccube.vetnpetclinic.model.*;
+import com.ccube.vetnpetclinic.service.*;
 
-import java.util.Set;
+import java.util.*;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
