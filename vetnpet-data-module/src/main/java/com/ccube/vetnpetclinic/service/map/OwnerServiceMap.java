@@ -2,9 +2,11 @@ package com.ccube.vetnpetclinic.service.map;
 
 import com.ccube.vetnpetclinic.model.*;
 import com.ccube.vetnpetclinic.service.*;
+import org.springframework.stereotype.*;
 
 import java.util.*;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
     @Override
     public Set<Owner> findAll() {
