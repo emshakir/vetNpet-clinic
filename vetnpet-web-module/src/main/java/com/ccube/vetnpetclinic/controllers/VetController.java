@@ -1,15 +1,23 @@
 package com.ccube.vetnpetclinic.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.ccube.vetnpetclinic.service.map.*;
+import org.springframework.stereotype.*;
+import org.springframework.ui.*;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/vets")
 public class VetController {
 
-    @RequestMapping({"vets","vets/index","vets/index.html"})
-    public String vetIndex(Model model){
-        model.addAttribute("vetWelcomeNote","List of Vet's Names");
+    private final VetServiceMap vetServiceMap;
+
+    public VetController(VetServiceMap vetServiceMap) {
+        this.vetServiceMap = vetServiceMap;
+    }
+
+    @RequestMapping({"", "/", "/index", "/index.html"})
+    public String listOfVets(Model model) {
+        model.addAttribute("listOfVets", vetServiceMap.findAll());
         return "vets/index";
     }
 }
