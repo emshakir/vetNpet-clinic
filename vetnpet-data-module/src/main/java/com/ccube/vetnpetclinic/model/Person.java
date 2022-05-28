@@ -1,8 +1,14 @@
 package com.ccube.vetnpetclinic.model;
 
-public class Person extends BaseEntity{
+import javax.persistence.*;
 
+@MappedSuperclass
+public class Person extends BaseEntity {
+
+    @Column(name = "FIRST_NAME")
     private String firstName;
+
+    @Column(name = "LAST_NAME")
     private String lastName;
 
     public String getFirstName() {

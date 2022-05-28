@@ -1,7 +1,12 @@
 package com.ccube.vetnpetclinic.model;
 
-public class PetType extends BaseEntity{
+import javax.persistence.*;
 
+@Entity
+@Table(name = "PET_TYPE")
+public class PetType extends BaseEntity {
+
+    @Column(name = "NAME")
     private String name;
 
     public String getName() {

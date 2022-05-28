@@ -1,10 +1,14 @@
 package com.ccube.vetnpetclinic.model;
 
-import java.io.Serializable;
+import javax.persistence.*;
+import java.io.*;
 
+@MappedSuperclass
 public class BaseEntity implements Serializable {
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     public Long getId() {

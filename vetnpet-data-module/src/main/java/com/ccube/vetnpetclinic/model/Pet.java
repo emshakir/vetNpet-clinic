@@ -1,10 +1,21 @@
 package com.ccube.vetnpetclinic.model;
 
-import java.time.LocalDate;
+import javax.persistence.*;
+import java.time.*;
 
-public class Pet extends BaseEntity{
+@Entity
+@Table(name = "PET")
+public class Pet extends BaseEntity {
+
+    @ManyToOne
+    @JoinColumn(name = "TYPE_ID")
     private PetType petType;
+
+    @ManyToOne
+    @JoinColumn(name = "OWNER_ID")
     private Owner owner;
+
+    @Column(name = "LOCAL_DATE")
     private LocalDate localDate;
 
     public PetType getPetType() {
