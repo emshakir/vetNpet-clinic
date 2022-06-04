@@ -9,15 +9,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/owners")
 public class OwnerController {
 
-    private final OwnerServiceMap ownerServiceMap;
+    private final OwnerMapService ownerMapService;
 
-    public OwnerController(OwnerServiceMap ownerServiceMap) {
-        this.ownerServiceMap = ownerServiceMap;
+    public OwnerController(OwnerMapService ownerMapService) {
+        this.ownerMapService = ownerMapService;
     }
 
     @RequestMapping({"", "/", "/index", "/index.html"})
     public String listOfOwners(Model model) {
-        model.addAttribute("ownersList", ownerServiceMap.findAll());
+        model.addAttribute("ownersList", ownerMapService.findAll());
         return "owners/index";
+    }
+
+    @RequestMapping("/find")
+    public String findOwners() {
+        return "notImplemented";
     }
 }

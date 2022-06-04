@@ -42,4 +42,12 @@ public class Owner extends Person {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
+    public Set<Pet> getSetOfPets() {
+        return setOfPets;
+    }
+
+    public void setSetOfPets(Set<Pet> setOfPets) {
+        this.setOfPets = setOfPets;
+    }
 }

@@ -7,14 +7,14 @@ import org.springframework.stereotype.*;
 import java.util.*;
 
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
     @Override
-    public Set<Owner> findAll() {
+    public Set<Pet> findAll() {
         return super.findAll();
     }
 
     @Override
-    public void delete(Owner object) {
+    public void delete(Pet object) {
         super.delete(object);
     }
 
@@ -24,17 +24,12 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Owner save(Owner object) {
+    public Pet save(Pet object) {
         return super.save(object);
     }
 
     @Override
-    public Owner findById(Long id) {
+    public Pet findById(Long id) {
         return super.findById(id);
-    }
-
-    @Override
-    public Owner findOwnerByLastName(String lastName) {
-        return null;
     }
 }

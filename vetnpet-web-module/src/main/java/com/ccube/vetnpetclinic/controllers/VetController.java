@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/vets")
 public class VetController {
 
-    private final VetServiceMap vetServiceMap;
+    private final VetMapService vetMapService;
 
-    public VetController(VetServiceMap vetServiceMap) {
-        this.vetServiceMap = vetServiceMap;
+    public VetController(VetMapService vetMapService) {
+        this.vetMapService = vetMapService;
     }
 
-    @RequestMapping({"", "/", "/index", "/index.html"})
+    @RequestMapping({"", "/", "/index", "/index.html","/vets.html"})
     public String listOfVets(Model model) {
-        model.addAttribute("listOfVets", vetServiceMap.findAll());
+        model.addAttribute("listOfVets", vetMapService.findAll());
         return "vets/index";
     }
 }
