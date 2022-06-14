@@ -15,7 +15,13 @@ public class VetController {
         this.vetMapService = vetMapService;
     }
 
-    @RequestMapping({"", "/", "/index", "/index.html","/vets.html"})
+//    private final VetSDJpa vetSDJpa;
+//
+//    public VetController(VetSDJpa vetSDJpa) {
+//        this.vetSDJpa = vetSDJpa;
+//    }
+
+    @RequestMapping({"", "/", "/index", "/index.html", "/vets.html"})
     public String listOfVets(Model model) {
         model.addAttribute("listOfVets", vetMapService.findAll());
         return "vets/index";

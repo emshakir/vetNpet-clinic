@@ -11,6 +11,12 @@ public class OwnerController {
 
     private final OwnerMapService ownerMapService;
 
+//    private final OwnerSDJpa ownerSDJpa;
+
+//    public OwnerController(OwnerSDJpa ownerSDJpa) {
+//        this.ownerSDJpa = ownerSDJpa;
+//    }
+
     public OwnerController(OwnerMapService ownerMapService) {
         this.ownerMapService = ownerMapService;
     }

@@ -2,11 +2,13 @@ package com.ccube.vetnpetclinic.service.map;
 
 import com.ccube.vetnpetclinic.model.*;
 import com.ccube.vetnpetclinic.service.*;
+import org.springframework.context.annotation.*;
 import org.springframework.stereotype.*;
 
 import java.util.*;
 
 @Service
+@Profile({"default","map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     private final SpecialityService specialityService;

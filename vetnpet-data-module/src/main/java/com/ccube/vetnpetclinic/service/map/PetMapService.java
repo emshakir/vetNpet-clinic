@@ -2,11 +2,13 @@ package com.ccube.vetnpetclinic.service.map;
 
 import com.ccube.vetnpetclinic.model.*;
 import com.ccube.vetnpetclinic.service.*;
+import org.springframework.context.annotation.*;
 import org.springframework.stereotype.*;
 
 import java.util.*;
 
 @Service
+@Profile({"default","map"})
 public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {

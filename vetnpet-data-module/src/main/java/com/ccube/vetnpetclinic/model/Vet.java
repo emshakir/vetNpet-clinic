@@ -1,9 +1,16 @@
 package com.ccube.vetnpetclinic.model;
 
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.*;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "VET")
 public class Vet extends Person {
@@ -13,11 +20,4 @@ public class Vet extends Person {
             inverseJoinColumns = @JoinColumn(name = "SPECIALITY_ID"))
     private Set<Speciality> specialities = new HashSet<>();
 
-    public Set<Speciality> getSpecialities() {
-        return specialities;
-    }
-
-    public void setSpecialities(Set<Speciality> specialities) {
-        this.specialities = specialities;
-    }
 }
