@@ -1,6 +1,6 @@
 package com.ccube.vetnpetclinic.controllers;
 
-import com.ccube.vetnpetclinic.service.map.*;
+import com.ccube.vetnpetclinic.service.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/owners")
 public class OwnerController {
 
-    private final OwnerMapService ownerMapService;
+
+    private final OwnerService ownerService;
+
+    public OwnerController(OwnerService ownerService) {
+        this.ownerService = ownerService;
+    }
 
 //    private final OwnerSDJpa ownerSDJpa;
 
@@ -17,13 +22,10 @@ public class OwnerController {
 //        this.ownerSDJpa = ownerSDJpa;
 //    }
 
-    public OwnerController(OwnerMapService ownerMapService) {
-        this.ownerMapService = ownerMapService;
-    }
 
     @RequestMapping({"", "/", "/index", "/index.html"})
     public String listOfOwners(Model model) {
-        model.addAttribute("ownersList", ownerMapService.findAll());
+        model.addAttribute("ownersList", ownerService.findAll());
         return "owners/index";
     }
 
