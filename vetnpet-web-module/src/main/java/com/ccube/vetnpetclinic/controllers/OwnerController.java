@@ -4,6 +4,7 @@ import com.ccube.vetnpetclinic.service.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.*;
 
 @Controller
 @RequestMapping("/owners")
@@ -32,5 +33,12 @@ public class OwnerController {
     @RequestMapping("/find")
     public String findOwners() {
         return "notImplemented";
+    }
+
+    @GetMapping("/{ownerId}")
+    public ModelAndView showOwner(@PathVariable Long ownerId) {
+        ModelAndView mav = new ModelAndView("owners/ownerDetails");
+        mav.addObject(ownerService.findById(ownerId));
+        return mav;
     }
 }
