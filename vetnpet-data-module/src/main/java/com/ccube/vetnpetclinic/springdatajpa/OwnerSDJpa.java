@@ -28,6 +28,11 @@ public class OwnerSDJpa implements OwnerService {
     }
 
     @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return ownerRepository.findAllByLastNameLike(lastName);
+    }
+
+    @Override
     public Set<Owner> findAll() {
         Set<Owner> owners = new HashSet<>();
         ownerRepository.findAll().forEach(owners::add);
@@ -41,11 +46,6 @@ public class OwnerSDJpa implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
-        System.out.println("::::::::::::::::::::::::::::");
-        System.out.println("::::::::::::::::::::::::::::");
-        System.out.println("::::::::::::::::::::::::::::");
-        System.out.println("::::::::::::::::::::::::::::");
-        System.out.println("::::::::::::::::::::::::::::");
         return ownerRepository.save(object);
     }
 
