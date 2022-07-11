@@ -1,6 +1,7 @@
 package com.ccube.vetnpetclinic.model;
 
 import lombok.*;
+import org.springframework.format.annotation.*;
 
 import javax.persistence.*;
 import java.time.*;
@@ -26,6 +27,7 @@ public class Pet extends BaseEntity {
     private Owner owner;
 
     @Column(name = "BIRTH_DATE")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
